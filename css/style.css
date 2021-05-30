@@ -8,32 +8,38 @@
 header{
     background-image: url('../img/pokedex-top.png');
     background-repeat: no-repeat;
-    min-height: 150px;
+    background-position: top;
+    min-height: 135px;
     background-size: cover;
 }
 #d-center{
+    padding: 5px;
     background-image: url('../img/pokedex-center.png');
-    background-repeat: no-repeat;
-    min-height: 250px;
+    background-repeat:repeat;
     background-size: cover;
+    min-height: 200px;
 }
 footer{
+    margin-top: 0;
     background-image: url('../img/pokedex-bottom.png');
     background-repeat: no-repeat;
-    min-height: 180px;
+    background-position: bottom;
+    min-height: 150px;
     background-size: cover;
 }
-p{
-    font-weight:bold;
-}
 
-#pokemones{
-   
-    
-}
 h3{
     position: fixed;
 }
 #poke{
     overflow-inline: 100px;
+}
+span{
+     font-weight:bold;
+     text-transform: capitalize;
+}
+
+#nombre{
+    font-size: large;
+    text-transform: uppercase;
 }
