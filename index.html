@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/pokeball.png">
+    <title>Pokemon</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="centro"> 
+            <div class="col-4 text-center shadow-3-strong   top-0 end-0" id="pokedex">
+                <header></header>
+                <div id="d-center">
+                    <p> Nombre <span id="nombre"></span></p>
+                    <p> <span id="foto"></span></p>
+                    <hr><p>Tipo <span id="tipo"></span></p>
+                    <p>Altura <span id="altura"></span>  Peso <span id="peso"></span></p>                        
+                </div>
+                <footer></footer>
+            </div>
+            <div class="col-8 position-relative top-0 start-30 px-5" id="pokemones">
+               <h3 class="text-black display-2 py-4 navbar navbar-expand-lg navbar-light fixed">Pokedex</h3>
+                <div class="row" id="poke"></div>
+           </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            for (let i=1;i<152;i++){
+                let pokemon ={};
+                $('#poke').append(`<div class="col-2 "><img id="${i}" src="http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png"></div>`);                                    
+                console.log (poke);
+            }
+
+            $('poke').on('click', function(){
+                $('tipo'),children().remove();
+                const mostrar = $(this).attr('id');
+                let pokes={};
+            });
+                $.get(`http://pokeapi.co/api/v2/pokemon/${mostrar}`,function(data){
+                    pokes = data;
+                    console.log (data);
+                    $('#nombre').html(pokes.name);
+                    $('#altura').html(pokes.height);
+                    $('#peso').html(pokes.weight);
+                    $('foto').attr('src',pokes.sprites.front_default).htnl('<p> Sprites Normales </p>');
+                    const types =[];
+                    for(let i=1;i<pokes.types.length;i++){
+                        types.push(pokes.types[0],types.names);
+                    }
+                   $('#tipo').append(types.join(' - '))
+                    
+                });
+            
+        });
+
+
+    </script>
+    
+</body>
+</html>

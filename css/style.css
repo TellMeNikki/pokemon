@@ -1,0 +1,39 @@
+.container{
+    margin: 0px auto;
+}
+#pokedex{
+    margin-top: 20px;
+    position: fixed;
+}
+header{
+    background-image: url('../img/pokedex-top.png');
+    background-repeat: no-repeat;
+    min-height: 150px;
+    background-size: cover;
+}
+#d-center{
+    background-image: url('../img/pokedex-center.png');
+    background-repeat: no-repeat;
+    min-height: 250px;
+    background-size: cover;
+}
+footer{
+    background-image: url('../img/pokedex-bottom.png');
+    background-repeat: no-repeat;
+    min-height: 180px;
+    background-size: cover;
+}
+p{
+    font-weight:bold;
+}
+
+#pokemones{
+   
+    
+}
+h3{
+    position: fixed;
+}
+#poke{
+    overflow-inline: 100px;
+}
